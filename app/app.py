@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import preprocess, basic_impute, advance_impute
 
-st.set_page_config(page_title="MissNoMore", page_icon="🔍")
+st.set_page_config(page_title="MissNoMore", page_icon="🌐")
 css = '''
 <style>
     [data-testid="stSidebar"]{
