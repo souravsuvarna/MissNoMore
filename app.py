@@ -73,12 +73,13 @@ if uploaded_file is not None:
                 return False
             
         #Neighbors for KNN
-        if(selected_method == "KNN"):
-            order = st.sidebar.text_input('Enter the number of neighbors to consider:', '2')
-            
-            if not validate_input(order):
-                flag_neighbor=1
-                st.sidebar.warning("Please enter a valid numeric value greater than or equal to 2.")
+        if(operation!="None"):
+            if(selected_method == "KNN"):
+                order = st.sidebar.text_input('Enter the number of neighbors to be considered:', '2')
+                
+                if not validate_input(order):
+                    flag_neighbor=1
+                    st.sidebar.warning("Please enter a valid numeric value greater than or equal to 2.")
         
         # Submit Section 
         if st.sidebar.button('Submit'):
@@ -160,7 +161,42 @@ if uploaded_file is not None:
                     st.caption(f"{uploaded_file.name}_{selected_method}.csv")
                     df = advance_impute.iterative(data)
                     st.write(df)
-            
+                    
+                #3. SimpleImputer Mean
+                elif(selected_method == 'SimpleImputer (Mean)'):
+                    st.caption(f"{uploaded_file.name}_{selected_method}.csv")
+                    df = advance_impute.simple_mean(data)
+                    st.write(df)                    
+
+                #4. SimpleImputer Median
+                elif(selected_method == 'SimpleImputer (Median)'):
+                    st.caption(f"{uploaded_file.name}_{selected_method}.csv")
+                    df = advance_impute.simple_median(data)
+                    st.write(df)  
+                    
+                #5. Random-Forest
+                elif(selected_method == 'Random-Forest'):
+                    st.caption(f"{uploaded_file.name}_{selected_method}.csv")
+                    df = advance_impute.random_forest(data)
+                    st.write(df)  
+                    
+                #6. Decision Tree
+                elif(selected_method == 'Decision Tree') : 
+                    st.caption(f"{uploaded_file.name}_{selected_method}.csv")
+                    df = advance_impute.decision_tree(data)
+                    st.write(df)  
+                
+                #7. Linear Regression
+                elif(selected_method == 'Linear Regression'):
+                    st.caption(f"{uploaded_file.name}_{selected_method}.csv")
+                    df = advance_impute.linear_reg(data)
+                    st.write(df)  
+                
+                #8. Random Sampling
+                elif(selected_method == 'Random Sampling'):
+                    st.caption(f"{uploaded_file.name}_{selected_method}.csv")
+                    df = advance_impute.random_sampling(data)
+                    st.write(df)                                                                            
                         
             # Download Dataset
             if flag!=0 and flag_neighbor!=1 :        
@@ -172,3 +208,16 @@ if uploaded_file is not None:
         
     except Exception as e:
         st.write("Error loading CSV:", e)
+
+# Credit Section
+# Define the developer name and their GitHub and LinkedIn URLs
+developer_name = "Sourav Suvarna"
+github_url = "https://github.com/souravsuvarna"
+linkedin_url = "https://www.linkedin.com/in/souravsuvarna/"
+st.title("")
+st.markdown("<p style='text-align: center; color: #E9E8E8; font-family:'alata', sans-serif;'>Developed by </p>", unsafe_allow_html=True)
+
+container = st.container()
+container.markdown(f"<div style='display: flex; align-items: center; justify-content: center;'><p style='margin-right: 10px;'>{developer_name} <a href='{github_url}' target='_blank'><img style='margin-right: 10px; width:25px;height:25px; background-color: white; border-radius: 50%;' src='https://github.com/favicon.ico' alt='GitHub'></a> <a href='{linkedin_url}' target='_blank'><img style='width: 20px; height: 20px;' src='https://www.linkedin.com/favicon.ico' alt='LinkedIn'></a></p></div>", unsafe_allow_html=True)
+st.title("")
+st.caption('© 2023. All rights reserved.')
