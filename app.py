@@ -27,6 +27,9 @@ st.title("")
 
 flag = 0
 flag_neighbor=0
+hyperlink="https://images.app.goo.gl/vRyFY4kfEpPCFcvX9"
+text="Documentation"
+st.sidebar.markdown(f"[{text}]({hyperlink})") ##document link will be here
 if uploaded_file is not None:
 
     # Convert the file-like object to a pandas DataFrame
@@ -48,7 +51,7 @@ if uploaded_file is not None:
             # List of column with NA
             column_with_na = preprocess.null_columns(data)
             selected_column = st.sidebar.selectbox("Select a Column",column_with_na)
-            st.sidebar.caption("Note: Columns Names in the selection list are the columns with missing values")
+            st.sidebar.caption("Note: Columns names in this selection list are the columns with missing values.")
             flag = 1
             # Method of Basic Imputation
             methods_of_basic_imputation = ['Replace With Zero','Mean','Median','Mode','Forward Fill','Backward Fill','Interpolate (Linear)','Interpolate (Quadratic)','Interpolate (Cubic)']
