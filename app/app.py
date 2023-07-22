@@ -3,7 +3,11 @@ import sys
 import pandas as pd
 import preprocess, basic_impute, advance_impute
 
+<<<<<<< HEAD
 st.set_page_config(page_title="MissNoMore", page_icon="🔍")
+=======
+st.set_page_config(page_title="MissNoMore", page_icon="🌐")
+>>>>>>> f81673a319a5d77b6a943b7b200159d154607f97
 css = '''
 <style>
     [data-testid="stSidebar"]{
