@@ -1,0 +1,16 @@
+# custom_theme.toml
+
+[theme]
+primaryColor = '#E694FF'    # Orange (for interactive elements)
+backgroundColor = '#263238'    # Dark Blue-Grey (for the main content area)
+secondaryBackgroundColor = '#37474F'    # Deep Blue-Grey (for sidebar and most interactive widgets)
+textColor = '#FFFFFF'    # White (for almost all text)
+font = "Arial, sans-serif"    # Custom font family (you can change it to any other font)
+
+[theme.sidebar]
+backgroundColor = '#1976D2'    # Dark Blue (for sidebar background)
+textColor = '#FFFFFF'    # White (for sidebar text)
+
+[theme.topbar]
+backgroundColor = '#1976D2'    # Dark Blue (for topbar background)
+textColor = '#FFFFFF'    # White (for topbar text)
