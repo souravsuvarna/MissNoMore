@@ -1,8 +1,9 @@
 import streamlit as st
+import sys
 import pandas as pd
 import preprocess, basic_impute, advance_impute
 
-# st.set_page_config(page_title="The Ramsey Highlights", layout="wide")
+st.set_page_config(page_title="MissNoMore", page_icon="🔍")
 css = '''
 <style>
     [data-testid="stSidebar"]{
@@ -35,7 +36,11 @@ if uploaded_file is not None:
     # Convert the file-like object to a pandas DataFrame
     try:
         # Data Set Upload and display operation.
-        data = preprocess.tocsv(uploaded_file)
+        try:
+            data = preprocess.tocsv(uploaded_file)
+        except:
+            st.sidebar.warning("Error in the uploaded file")
+            sys.exit(1)
         st.subheader('Uploaded DataSet :')
         st.caption(uploaded_file.name)
         st.write(data)
@@ -53,6 +58,9 @@ if uploaded_file is not None:
             selected_column = st.sidebar.selectbox("Select a Column",column_with_na)
             st.sidebar.caption("Note: Columns names in this selection list are the columns with missing values.")
             flag = 1
+            if(selected_column==None):
+                st.sidebar.warning("No Columns are applicable")
+                sys.exit(1)
             # Method of Basic Imputation
             methods_of_basic_imputation = ['Replace With Zero','Mean','Median','Mode','Forward Fill','Backward Fill','Interpolate (Linear)','Interpolate (Quadratic)','Interpolate (Cubic)']
             selected_method = st.sidebar.selectbox("Select a method",methods_of_basic_imputation)
