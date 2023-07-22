@@ -14,7 +14,7 @@ css = '''
 st.markdown(css, unsafe_allow_html=True)
 uploaded_file = st.sidebar.file_uploader("Choose a CSV file", type=["csv"])
 
-st.markdown("""<h1 style='text-align: center; color: white; font-family:'silver-forte', sans-serif;'>MissNoMore</h1><style>
+st.markdown("""<h1 style='text-align: center; color: yellow; font-family:'silver-forte', sans-serif;'>MissNoMore</h1><style>
         h1{
             font-size: 50px;
             vertical-align: super;

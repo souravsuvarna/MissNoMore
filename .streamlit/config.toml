@@ -1,7 +1,7 @@
 # custom_theme.toml
 
 [theme]
-primaryColor = '#E694FF'    # Orange (for interactive elements)
+primaryColor = '#58fce1'    # Orange (for interactive elements)
 backgroundColor = '#263238'    # Dark Blue-Grey (for the main content area)
 secondaryBackgroundColor = '#37474F'    # Deep Blue-Grey (for sidebar and most interactive widgets)
 textColor = '#FFFFFF'    # White (for almost all text)
