@@ -30,6 +30,7 @@ Try out the deployed MissNoMore application [here](https://missnomore.streamlit.
    ```
    git clone https://github.com/souravsuvarna/MissNoMore.git
    cd MissNoMore
+   cd app
    ```
 3. Install the required libraries:
 ```
