@@ -33,18 +33,18 @@ Try out the deployed MissNoMore application [here](https://missnomore.streamlit.
    cd app
    ```
 3. Install the required libraries:
-```
+   ```
 pip install pandas
 pip install streamlit
 pip install scikit-learn
-```
+   ```
 
 ### Usage
 
 1. Run the Streamlit app:
-```
+   ```
 streamlit run app.py
-```
+   ```
 
 2. Choose the CSV dataset with missing values you want to impute.
 
