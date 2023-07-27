@@ -18,7 +18,7 @@ Try out the deployed MissNoMore application [here](https://missnomore.streamlit.
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.8+
 - Pandas library
 - Streamlit library
 - Scikit library
